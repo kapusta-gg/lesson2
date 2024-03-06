@@ -12,10 +12,10 @@ api = Api(app, catch_all_404s=True)
 def main():
     db_session.global_init("db/blogs.db")
     # для списка объектов
-    api.add_resource(news_resources.NewsListResource, '/api/v2/news')
+    api.add_resource(news_resources.NewsListResource, '/api/v2/news') # ALL
 
     # для одного объекта
-    api.add_resource(news_resources.NewsResource, '/api/v2/news/<int:news_id>')
+    api.add_resource(news_resources.NewsResource, '/api/v2/news/<int:news_id>') # ONE
 
     app.run()
 
